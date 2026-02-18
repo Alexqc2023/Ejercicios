@@ -10,20 +10,17 @@ public class DetallePedido {
     }
 
     public Producto getProducto() { 
-        return producto; 
-
-    }
+        return producto;
+     }
     public int getCantidad() { 
         return cantidad;
-
      }
-
-    public double calcularSubtotal() {
-        return precioUnitario * cantidad;
+    public double calcularSubtotal() { 
+        return precioUnitario * cantidad; 
     }
 
     @Override
     public String toString() {
-        return producto.getNombre() + " x " + cantidad + " ($" + precioUnitario + ")";
+        return String.format("%-15s x%d ($%.2f)", producto.getNombre(), cantidad, precioUnitario);
     }
 }
