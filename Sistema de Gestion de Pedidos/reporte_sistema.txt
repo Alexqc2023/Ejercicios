@@ -1,0 +1,10 @@
+--- REPORTE DEL SISTEMA ---
+Generado: 02/03/2026 20:55:10
+Total Productos: 1
+Total Clientes: 1
+
+--- ALERTAS DE STOCK (< 5) ---
+- Carne (Stock: 2)
+
+--- INGRESOS CONFIRMADOS/PROCESADOS ---
+Total: $0.00

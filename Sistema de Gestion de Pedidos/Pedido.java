@@ -7,6 +7,7 @@ public class Pedido {
     
     public static final String ESTADO_BORRADOR = "BORRADOR";
     public static final String ESTADO_CONFIRMADO = "CONFIRMADO";
+    public static final String ESTADO_PROCESADO = "PROCESADO";
     public static final String ESTADO_CANCELADO = "CANCELADO";
 
     private int id;
@@ -26,13 +27,32 @@ public class Pedido {
     public int getId() {
          return id; 
         }
+
+
+        public Cliente getCliente(){
+            return cliente;
+        }
+
+
     public String getEstado() {
          return estado; 
         }
+
+
     public List<DetallePedido> getDetalles() { 
         return detalles;
      }
-    public Date getFechaCreacion() { return fechaCreacion; }
+
+    public Date getFechaCreacion() { 
+        return fechaCreacion; 
+    }
+
+    public void setFechaCreacion(long tiempoMilisegundos){
+        this.fechaCreacion = new Date(tiempoMilisegundos);
+        
+    }
+    
+
 
     public void setEstado(String nuevoEstado) { 
         this.estado = nuevoEstado; 
@@ -41,7 +61,7 @@ public class Pedido {
   
     public void agregarProducto(Producto producto, int cantidad) throws PedidoInvalidoException, StockInsuficienteException {
         if (!estado.equals(ESTADO_BORRADOR)) {
-            throw new PedidoInvalidoException("Solo se pueden agregar productos a pedidos en BORRADOR.");
+            throw new PedidoInvalidoException("Solo se pueden agregar productos a pedidos en Borrador.");
         }
         
         if (producto.getStock() < cantidad) {
