@@ -1,0 +1,2 @@
+Laptop,Dipositivos eletronicos,46000.0,1
+Monitor,Dipositivo electronico,500.0,4
